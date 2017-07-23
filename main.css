@@ -1,0 +1,12 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+h1{font-family: 'Open Sans', sans-serif;}
+h3{font-family: 'Open Sans', sans-serif;}
+p{font-family: 'Open Sans', sans-serif;}
+
+/* Collums */
+.col-wrapper{width:9999px; margin:0 auto;}
+.col{margin:0 10px; float:left; display:inline;}
+.col-670{width:670px;}
+.col-250{width:250px;}

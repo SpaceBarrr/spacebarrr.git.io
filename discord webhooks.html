@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discord Webhook Automator</title>
+</head>
+<body bgcolor="#00ffff">
+<link href="main.css" rel="stylesheet" type="text/css">
+
+
+<div class="col-wrapper">
+    <div class="col col-670"><h1>Send a Message</h1>
+<!-- Sends a message to the channel -->
+
+<h3>Webhook URL</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="url" type="text" name="link" placeholder="Webhook URL [required]">
+<h3>Username</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="name" type="text" name="Username (nick of hook)" placeholder="nickname for bot [not required]">
+<h3>Avatar URL</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="avatar" type="text" name="Avatar of bot" placeholder="avatar of the bot [not required]">
+<h3>Message Text</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="content" type="text" name="msg content" placeholder="message for bot to send [required]">
+<br></div>
+   
+    <div class="col col-250"><h1>Embed Box</h1>
+<!-- Makes a little box with the shit you put in it -->
+
+<h3>Author</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="author_name" type="text" name="author name" placeholder="first line of box [not required]">
+<h3>Author Icon URL</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="author_icon" type="text" name="author Avatar URL" placeholder="small picture in box [not required]">
+<h3>Title</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="embed_title" type="text" name="embed title" placeholder="second line of box [not required]">
+<h3>Content</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="embed_content" type="text" name="embed text" placeholder="third line of box [not required]">
+<h3>Sidebar Color</h3>
+<input class="input" style="width:350px;font-size:10pt;" id="color" type="text" name="hex color" placeholder="hexadecimal colour [not required]">
+<br></div>
+</div>
+
+<!-- Trust me this is required or the whole thing fucks up -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Button -->
+<div class="button button"><button id="send" onclick="send()">Submit</button></div>
+
+
+<!-- A whole bunch of scripting bullshit i dont understand that sends the request -->
+<script>
+function send(){
+	if(!document.getElementById('url').value){
+		alert("You need to provide a webhook URL.")
+	}
+	else{
+	var hookurl = document.getElementById('url').value + "/slack"
+	var msgJson
+	if(document.getElementById('author_icon').value || document.getElementById('author_name').value || document.getElementById('embed_title').value || document.getElementById('embed_content').value){
+		msgJson = {
+		 "username": document.getElementById('name').value,
+		 "icon_url": document.getElementById('avatar').value,
+		 "text": document.getElementById('content').value,
+		 "attachments":[{
+		   "author_icon": document.getElementById('author_icon').value,
+		   "author_name": document.getElementById('author_name').value,
+		   "color": document.getElementById('color').value,
+		   "fields": [{
+		    "title": document.getElementById('embed_title').value,
+		    "value": document.getElementById('embed_content').value,
+		   }]
+		  }]
+		}
+	}
+	else{
+		msgJson = {
+		  "username": document.getElementById('name').value,
+		  "icon_url": document.getElementById('avatar').value,
+		  "text": document.getElementById('content').value
+		}
+	}
+  post(hookurl, msgJson);
+}
+}
+</script>
+
+<script>
+function post(url, jsonmsg){
+	xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json");
+	var data = JSON.stringify(jsonmsg);
+	xhr.send(data);
+	xhr.onreadystatechange = function() {
+		if(this.status != 200){
+			alert(this.responseText);
+		}
+	}
+}
+</script>
+
+<footer>
+  <p>Code copy pasted (but slightly modified) off <a href="http://webhook.flamingobot.xyz">this</a> website which is now down.
+  <br>
+  Liscened under the <i>AnyoneButNicholasFranzLiscense</i> 2017©</p>
+</footer>
+
+</body>
+</html>
