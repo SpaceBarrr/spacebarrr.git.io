@@ -5,12 +5,13 @@
 </head>
 <body bgcolor="#00ffff">
 <link href="main.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" href="https://cdn.pbrd.co/images/GCcOKQG.vnd.microsoft.icon"/>
-
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	
 <div class="col-wrapper">
-    <div class="col col-670"><h1>Send a Message</h1>
-<!-- Sends a message to the channel -->
-
+    
+	<div class="col col-670"><h1>Send a Message</h1>
+	<!-- Sends a message to the channel -->
 <h3>Webhook URL</h3>
 <input class="input" style="width:350px;font-size:10pt;" id="url" type="text" name="link" placeholder="Webhook URL [required]">
 <h3>Username</h3>
@@ -21,9 +22,8 @@
 <input class="input" style="width:350px;font-size:10pt;" id="content" type="text" name="msg content" placeholder="message for bot to send [required]">
 <br></div>
    
-    <div class="col col-250"><h1>Embed Box</h1>
-<!-- Makes a little box with the shit you put in it -->
-
+   	<div class="col col-250"><h1>Embed Box</h1>
+	<!-- Makes a little box with the shit you put in it -->
 <h3>Author</h3>
 <input class="input" style="width:350px;font-size:10pt;" id="author_name" type="text" name="author name" placeholder="first line of box [not required]">
 <h3>Author Icon URL</h3>
@@ -44,7 +44,7 @@
 <div class="button button"><button id="send" onclick="send()">Submit</button></div>
 
 
-<!-- A whole bunch of scripting bullshit i dont understand that sends the request -->
+<!-- The scripts that format and send the request -->
 <script>
 function send(){
 	if(!document.getElementById('url').value){
@@ -96,6 +96,7 @@ function post(url, jsonmsg){
 }
 </script>
 
+	<!-- Footer -->
 <footer>
   <p>Code copy pasted (but slightly modified) off <a href="http://webhook.flamingobot.xyz">this</a> website which is now down.
   <br>
