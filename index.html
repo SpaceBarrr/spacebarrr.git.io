@@ -4,13 +4,16 @@
   <title>Discord Webhook Automator</title>
 </head>
 <link href="main.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="animations.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 	
 <div class="col-wrapper">
     
-	<div class="col col-670"><h1>Send a Message</h1>
+	<div class="col col-670"><div id="object" class="slideRight"><h1>Send a Message</h1></div>
 	<!-- Sends a message to the channel -->
+
+<div id="object" class="fadeIn">
 <h3>Webhook URL</h3>
 <input class="input" style="width:350px;font-size:10pt;" id="url" type="text" name="link" placeholder="Webhook URL [required]">
 <h3>Message Text</h3>
@@ -19,10 +22,12 @@
 <input class="input" style="width:350px;font-size:10pt;" id="name" type="text" name="Username (nick of hook)" placeholder="nickname for bot [not required]">
 <h3>Avatar URL</h3>
 <input class="input" style="width:350px;font-size:10pt;" id="avatar" type="text" name="Avatar of bot" placeholder="avatar of the bot [not required]">
-<br></div>
+</div><br></div>
    
-   	<div class="col col-250"><h1>Embed Box</h1>
+   	<div class="col col-250"><div id="object" class="slideLeft"><h1>Embed Box</h1></div>
 	<!-- Makes a little box with the shit you put in it -->
+
+<div id="object" class="fadeIn">
 <h3>Author</h3>
 <input class="input" style="width:350px;font-size:10pt;" id="author_name" type="text" name="author name" placeholder="first line of box [not required]">
 <h3>Author Icon URL</h3>
@@ -33,14 +38,15 @@
 <input class="input" style="width:350px;font-size:10pt;" id="embed_content" type="text" name="embed text" placeholder="third line of box [not required]">
 <h3>Sidebar Color</h3>
 <input class="input" style="width:350px;font-size:10pt;" id="color" type="text" name="hex color" placeholder="hexadecimal colour [not required]">
+</div>
 <br></div>
 </div>
-
+</div>
 <!-- Trust me this is required or the whole thing fucks up -->
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <!-- Button -->
-<div class="button button"><button id="send" onclick="send()">Submit</button></div>
+<div id="object" class="slideUp"><div class="button button"><button id="send" onclick="send()">Submit</button></div></div>
 
 
 <!-- The scripts that format and send the request -->
@@ -96,11 +102,12 @@ function post(url, jsonmsg){
 </script>
 
 	<!-- Footer -->
+<div id="object" class="slideUp">
 <footer>
   <p>Code copy pasted (but slightly modified) off <a href="http://webhook.flamingobot.xyz">this</a> website which is now down.
   <br>
   Liscened under the <i>AnyoneButNicholasFranzLiscense</i> 2017©</p>
 </footer>
-
+</div>
 </body>
 </html>
