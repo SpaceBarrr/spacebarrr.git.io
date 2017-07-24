@@ -11,10 +11,11 @@ p{font-family: 'Open Sans', sans-serif;}
 .col-670{width:670px;}
 .col-250{width:250px;}
 
+/* Colour Change */
     body {
-      animation: colorchange 20s; /* animation-name followed by duration in seconds*/
-         /* you could also use milliseconds (ms) or something like 2.5s */
-      -webkit-animation: colorchange 20s; /* Chrome and Safari */
+      animation: colorchange 20s; 			/* animation-name followed by duration in seconds*/
+         									/* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 20s; 	/* Chrome and Safari */
       animation-iteration-count:infinite;
     }
 
@@ -27,7 +28,8 @@ p{font-family: 'Open Sans', sans-serif;}
       100% {background: red;}
     }
 
-    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    /* More safari/chrome specific duplicates */ 
+    @-webkit-keyframes colorchange 
     {
       0%   {background: red;}
       25%  {background: yellow;}
@@ -35,3 +37,11 @@ p{font-family: 'Open Sans', sans-serif;}
       75%  {background: green;}
       100% {background: red;}
     }
+
+input
+{
+    -moz-border-radius: 15px;
+ 	border-radius: 15px;
+    border:solid 2px black;
+    padding:5px;
+}
