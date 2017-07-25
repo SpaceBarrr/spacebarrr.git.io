@@ -2,12 +2,20 @@
 <html>
 <head>
   <title>Discord Webhook Automator</title>
+  <script type="text/javascript" src="main.js"></script>
 </head>
 <link href="main.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="animations.css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 	
+<div id="audio" class="hide">
+<audio controls autoplay>
+  <source src="bangarang.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</div>
+
 <div class="col-wrapper">
     
 	<div class="col col-670"><div id="object" class="slideRight"><h1>Send a Message</h1></div>
@@ -103,10 +111,12 @@ function post(url, jsonmsg){
 
 	<!-- Footer -->
 <div id="object" class="slideUp">
+<div id="footer" padding-left: 50px;>
 <footer>
   <p>Code copy pasted (but slightly modified) off <a href="http://webhook.flamingobot.xyz">this</a> website which is now down.
   <br>
   Liscened under the <i>AnyoneButNicholasFranzLiscense</i> 2017©</p>
+</div>
 </footer>
 </div>
 </body>
