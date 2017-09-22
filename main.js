@@ -27,8 +27,10 @@
 //        });
 //    });
 
-if (confirm("Click OK to confirm you are not Nicholas Franz!") == true) {
-    return;
-} else {
-    txt = "fuck off nic";
-}
+//if (confirm("Click OK to confirm you are not Nicholas Franz!") == true) {
+//    return;
+//} else {
+//    txt = "fuck off nic";
+//}
+
+//why delete code when you can just comment it all out LUL
